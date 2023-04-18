@@ -40,8 +40,24 @@ header{
 header nav {
     position: relative;
 }
+.links{
+    position: absolute;
+    top: -375px;
+    right: -375px;
+    background-color: rgba(255,255,255,.1);
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    font-family: var(--base-font);
+}
+.links ul{
+    position: relative;
+    top: 182px;
+    left: 50px;
+}
 .links li{
     list-style-type: none;
+    margin: 5px;
 }
 .links li a{
     color: #fff;
@@ -51,24 +67,11 @@ header nav {
     color: #9e9e9e;
     cursor: pointer;
 }
-.links{
-    position: absolute;
-    top: -375px;
-    right: -375px;
-    background-color: grey;
-    width: 350px;
-    height: 350px;
-    border-radius: 50%;
-}
-.links ul{
-    position: relative;
-    top: 200px;
-    left: 50px;
-}
 .fade-in{
     animation-name: fade-in;
     animation-duration: .5s;
     animation-fill-mode: forwards;
+    pointer-events: auto;
 }
 @keyframes fade-in {
     0%{opacity: 0;}
@@ -78,6 +81,7 @@ header nav {
     animation-name: fade-out;
     animation-duration: .5s;
     animation-fill-mode: forwards;
+    pointer-events: none;
 }
 @keyframes fade-out {
     0%{opacity: 1;}
@@ -132,7 +136,15 @@ nav:hover{
 .bar.bottom{
     left:2px;
 }
-
+.close {
+    position: relative;
+    top: 185px;
+    left: 148px;
+    color: #8a8989;
+    z-index: 1;
+    background: none;
+    border:none;
+}
 /* *************** HERO Section ***************** */
 .hero{
     color: #fff;
