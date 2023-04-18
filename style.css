@@ -1,0 +1,156 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    --primary: salmon;
+    --base-font: Arial, Helvetica, sans-serif;
+}
+.d-flex{
+    display: flex;
+}
+.jcc{
+    justify-content: center;
+}
+.aic{
+    align-items: center;
+}
+.align-center-both{
+    align-items: center;
+    justify-content: center;
+}
+.container{
+    background-image: url(https://images.unsplash.com/photo-1624696941338-934bf86c28b4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80);
+    background-size: cover;
+    background-attachment: fixed;
+    position: relative;
+    overflow: hidden;
+}
+
+/* *************** HEADER Section ***************** */
+header{
+    background: rgba(255,255,255,0);
+    color: #fff;
+    justify-content: space-between;
+    padding: 40px;
+    font-family: Arial, Helvetica, sans-serif;
+    position: sticky;
+    top: 0;
+    width: 100%;
+}
+header nav {
+    position: relative;
+}
+.links li{
+    list-style-type: none;
+}
+.links li a{
+    color: #fff;
+    text-decoration: none;
+}
+.links li a:hover{
+    color: #9e9e9e;
+    cursor: pointer;
+}
+.links{
+    position: absolute;
+    top: -375px;
+    right: -375px;
+    background-color: grey;
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+}
+.links ul{
+    position: relative;
+    top: 200px;
+    left: 50px;
+}
+.fade-in{
+    animation-name: fade-in;
+    animation-duration: .5s;
+    animation-fill-mode: forwards;
+}
+@keyframes fade-in {
+    0%{opacity: 0;}
+    100%{opacity: 1}
+}
+.fade-out{
+    animation-name: fade-out;
+    animation-duration: .5s;
+    animation-fill-mode: forwards;
+}
+@keyframes fade-out {
+    0%{opacity: 1;}
+    100%{opacity: 0}
+}
+.slide-in{
+    animation-name: slide-in;
+    animation-duration: .5s;
+    animation-fill-mode: forwards;
+}
+@keyframes slide-in{
+    0%{
+        top: -375px;
+        right: -375px;
+    }
+    100%{
+       top: -175px;
+       right: -175px;
+   }
+}
+.slide-out{
+    animation-name: slide-out;
+    animation-duration: .5s;
+    animation-fill-mode: forwards;
+}
+@keyframes slide-out{
+    0%{
+        top: -175px;
+        right: -175px;
+    }
+    100%{
+       top: -375px;
+       right: -375px;
+   }
+}
+
+nav .bars{
+    display: flex;
+    flex-direction: column;
+    gap:3px;
+}
+nav:hover{
+    cursor: pointer;
+}
+.bar{
+    width: 30px;
+    height:8px;
+    background-color: #fff;
+    position: relative;
+}
+.bar.top,
+.bar.bottom{
+    left:2px;
+}
+
+/* *************** HERO Section ***************** */
+.hero{
+    color: #fff;
+    font-family: var(--base-font);
+    padding-left: 200px;
+}
+.hero h1{
+    font-size: 70px;
+    font-weight: 400;
+
+}
+p.subtitle{
+
+}
+section{
+    min-height: 600px;
+}
+footer{
+    height: 300px;
+    background: var(--primary)
+}
