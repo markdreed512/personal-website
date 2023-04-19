@@ -1,9 +1,20 @@
 *{
     box-sizing: border-box;
 }
+html {
+    scroll-behavior: smooth;
+  }
 body{
     --primary: salmon;
     --base-font: Arial, Helvetica, sans-serif;
+    --display-font: 'Montserrat', sans-serif;
+}
+section{
+    min-height: 100vh;
+}
+section p{
+    font-size: 30px;
+    font-family: var(--display-font)
 }
 .d-flex{
     display: flex;
@@ -18,12 +29,20 @@ body{
     align-items: center;
     justify-content: center;
 }
+h2{
+    font-size: 50px;
+    font-family: var(--display-font);
+    font-weight: 400;
+}
 .container{
     background-image: url(https://images.unsplash.com/photo-1624696941338-934bf86c28b4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80);
     background-size: cover;
     background-attachment: fixed;
     position: relative;
     overflow: hidden;
+}
+main{
+    z-index: -1;
 }
 
 /* *************** HEADER Section ***************** */
@@ -33,15 +52,19 @@ header{
     justify-content: space-between;
     padding: 40px;
     font-family: Arial, Helvetica, sans-serif;
-    position: sticky;
-    top: 0;
+    position: fixed;
     width: 100%;
+    z-index:1;
 }
 header nav {
     position: relative;
 }
+.me{
+    width: 50px;
+    border-radius: 50%;
+}
 .links{
-    position: absolute;
+    position: fixed;
     top: -375px;
     right: -375px;
     background-color: rgba(255,255,255,.1);
@@ -49,6 +72,7 @@ header nav {
     height: 350px;
     border-radius: 50%;
     font-family: var(--base-font);
+    z-index: 2;
 }
 .links ul{
     position: relative;
@@ -148,21 +172,33 @@ nav:hover{
 /* *************** HERO Section ***************** */
 .hero{
     color: #fff;
-    font-family: var(--base-font);
+    font-family: var(--display-font);
     padding-left: 200px;
+    padding-top:200px;
+    height: 100vh;
 }
 .hero h1{
-    font-size: 70px;
+    font-size: 100px;
     font-weight: 400;
-
+    margin-bottom: 0;
 }
 p.subtitle{
+    font-size: 42px;
+    margin-top: 0;
+    position: relative;
+    left: 10px;
+    letter-spacing: 4px;
+}
 
+/* *************** ABOUT Section ***************** */
+#about{
+    background-color: rgba(0,0,0, 0.4);
+    backdrop-filter: blur(10px);
+    color: #fff;
+    padding: 100px 200px;
+    font-family: var(--base-font);
 }
-section{
-    min-height: 600px;
-}
+
 footer{
-    height: 300px;
-    background: var(--primary)
+    
 }

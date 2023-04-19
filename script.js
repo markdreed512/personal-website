@@ -29,3 +29,10 @@ function toggleMenu(){
 
 document.querySelector('button.close').addEventListener('click', toggleMenu)
 document.querySelector('header .bars').addEventListener('click', toggleMenu)
+let links = document.getElementsByTagName('li')
+for(link of links){
+    console.log(link)
+    link.addEventListener('click', function(e){
+        console.log(e.target)
+    })
+}
