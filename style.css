@@ -198,7 +198,19 @@ p.subtitle{
     padding: 100px 200px;
     font-family: var(--base-font);
 }
-
-footer{
-    
+#about p{
+    max-width: 1000px;
+}
+.about-img{
+    border-radius: 50%;
+}
+.grow-img{
+    animation-name: growImg;
+    animation-duration: 1.5s;
+    animation-fill-mode: forwards;
+}
+@keyframes growImg {
+    0%{width: 0px}
+    25%{width: 0px}
+    100%{width: 300px;}
 }
