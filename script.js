@@ -31,7 +31,27 @@ document.querySelector('button.close').addEventListener('click', toggleMenu)
 document.querySelector('header .bars').addEventListener('click', toggleMenu)
 
 function growImg(){
-    document.querySelector('.about-img').classList.add('grow-img')
+    document.querySelector('.about-img').classList.add('grow')
+    document.querySelector('.about-img').classList.remove('shrink')
 }
-// todo: refactor with intersectional observer
-document.querySelector('.about.link').addEventListener('click', growImg)
+function shrinkImg(){
+    document.querySelector('.about-img').classList.remove('grow')
+    document.querySelector('.about-img').classList.add('shrink')
+}
+
+const aboutImg = document.querySelector('.about-img')
+const options = {
+    // threshold: 0.5
+}
+function aboutObserverCallback(entries, observer){
+    entries.forEach(entry => {
+        console.log(entry)
+        if(entry.isIntersecting){
+            growImg()
+        }else{
+            shrinkImg()
+        }
+    })
+}
+const aboutSectionObserver = new IntersectionObserver(aboutObserverCallback, options)
+aboutSectionObserver.observe(aboutImg)
