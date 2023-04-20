@@ -192,7 +192,7 @@ p.subtitle{
 
 /* *************** ABOUT Section ***************** */
 #about{
-    display: flex;
+    /* display: flex; */
     background-color: rgba(0,0,0, 0.4);
     backdrop-filter: blur(10px);
     color: #fff;
@@ -203,11 +203,11 @@ p.subtitle{
     max-width: 1000px;
 }
 .about-img{
-    width: 0px;
+    width: 270px;
     border-radius: 50%;
-}
-.right{
-    padding: 85px;
+    float: left;
+    margin-right: 18px;
+    shape-outside: circle(50%);
 }
 .grow{
     animation-name: grow;

@@ -54,4 +54,4 @@ function aboutObserverCallback(entries, observer){
     })
 }
 const aboutSectionObserver = new IntersectionObserver(aboutObserverCallback, options)
-aboutSectionObserver.observe(aboutImg)
+// aboutSectionObserver.observe(aboutImg)
