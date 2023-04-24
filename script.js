@@ -43,15 +43,24 @@ const aboutImg = document.querySelector('.about-img')
 const options = {
     // threshold: 0.5
 }
+function slideParagraphsIn(){
+    document.querySelectorAll('#about p').forEach(p => p.classList.add('p-slide-in'))
+    document.querySelectorAll('#about p').forEach(p => p.classList.remove('p-slide-out'))
+    document.querySelector('.about-img').classList.add('grow')
+}
+function slideParagraphsOut(){
+    document.querySelectorAll('#about p').forEach(p => p.classList.add('p-slide-out'))
+    document.querySelectorAll('#about p').forEach(p => p.classList.remove('p-slide-in'))
+}
 function aboutObserverCallback(entries, observer){
     entries.forEach(entry => {
         console.log(entry)
         if(entry.isIntersecting){
-            growImg()
+            slideParagraphsIn()
         }else{
-            shrinkImg()
+            slideParagraphsOut()
         }
     })
 }
 const aboutSectionObserver = new IntersectionObserver(aboutObserverCallback, options)
-// aboutSectionObserver.observe(aboutImg)
+aboutSectionObserver.observe(aboutImg)

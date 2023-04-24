@@ -201,6 +201,17 @@ p.subtitle{
 }
 #about p{
     max-width: 1000px;
+    position: relative;
+    left: 90vw;
+}
+.p-slide-in{
+    animation-name: pSlideIn;
+    animation-duration: 1.5s;
+    animation-fill-mode: forwards;
+}
+@keyframes pSlideIn {
+    0%{left: 90vw}
+    100%{left: 0vw}
 }
 .about-img{
     width: 270px;
@@ -209,13 +220,25 @@ p.subtitle{
     margin-right: 18px;
     shape-outside: circle(50%);
 }
+.add-shape-outside{
+    /* animation-name: addShapeOutside;
+    animation-duration: 1.5s;
+    animation-fill-mode: forwards; */
+}
+@keyframes addShapeOutside {
+    0%{shape-outside: circle(0%);}
+    20%{shape-outside: circle(0%);}
+    100%{shape-outside: circle(50%);}
+}
 .grow{
     animation-name: grow;
     animation-duration: 1.5s;
     animation-fill-mode: forwards;
+    animation-timing-function: linear;
 }
 @keyframes grow {
     0%{width: 0px}
     25%{width: 0px}
+    50%{width:150px}
     100%{width: 300px;}
 }
